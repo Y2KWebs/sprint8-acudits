@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Acudit from "./components/acudit";
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container
+      className="vh-100"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Card className="shadow-lg text-center" style={{ width: "48rem" }}>
+        <Card.Header>Tiempo</Card.Header>
+        <Card.Body>
+          <Card.Title>Preparat per riure?</Card.Title>
+          <Card.Text>
+            <Acudit />
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 }
 
