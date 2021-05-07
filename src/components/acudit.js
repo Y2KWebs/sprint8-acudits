@@ -1,9 +1,11 @@
+import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import axios from "axios";
 
 export default function Acudit() {
   const [acudit, setAcudit] = useState("");
 
+  //Seleccionamos aleatoriamente de dos APIs
   const apiUrl =
     Math.random() <= 0.5
       ? "https://icanhazdadjoke.com/"
@@ -20,9 +22,9 @@ export default function Acudit() {
 
   return (
     <>
-      {acudit}
-      <br />
-      <button onClick={fetchData}>següent acudit</button>
+      <div className="card-text p-2 mb-2">{acudit}</div>
+
+      <Button onClick={fetchData}>següent acudit</Button>
     </>
   );
 }
