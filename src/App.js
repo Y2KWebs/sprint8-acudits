@@ -1,6 +1,8 @@
-import Acudit from "./components/acudit";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+
+import Acudit from "./components/acudit";
+import Meteo from "./components/meteo";
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
       }}
     >
       <Card className="shadow-lg text-center" style={{ width: "48rem" }}>
-        <Card.Header>Tiempo</Card.Header>
+        <Card.Header>
+          <Meteo />
+        </Card.Header>
         <Card.Body>
           <Card.Title>Preparat per riure?</Card.Title>
           <Card.Text>
