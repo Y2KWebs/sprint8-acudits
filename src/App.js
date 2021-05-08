@@ -1,10 +1,16 @@
-import Card from "react-bootstrap/Card";
+import { useEffect, useState } from "react";
+
 import Container from "react-bootstrap/Container";
 
-import Acudit from "./components/acudit";
-import Meteo from "./components/meteo";
+import { Home } from "./components/home";
+import { Welcome } from "./components/welcome";
 
 function App() {
+  const [welcome, setWelcome] = useState(true);
+  const handleWelcome = () => {
+    setWelcome(false);
+  };
+
   return (
     <Container
       className="vh-100"
@@ -14,17 +20,7 @@ function App() {
         alignItems: "center",
       }}
     >
-      <Card className="shadow-lg text-center" style={{ width: "48rem" }}>
-        <Card.Header>
-          <Meteo />
-        </Card.Header>
-        <Card.Body>
-          <Card.Title>Preparat per riure?</Card.Title>
-          <Card.Text>
-            <Acudit />
-          </Card.Text>
-        </Card.Body>
-      </Card>
+      {welcome ? <Welcome handleWelcome={handleWelcome} /> : <Home />}
     </Container>
   );
 }
