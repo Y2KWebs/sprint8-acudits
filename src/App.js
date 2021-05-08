@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
 import { Home } from "./components/home";
 import { Welcome } from "./components/welcome";
 
 function App() {
-  const [welcome, setWelcome] = useState(true);
-  const handleWelcome = () => {
-    setWelcome(false);
-  };
-
   return (
     <Container
       className="vh-100"
@@ -20,7 +14,17 @@ function App() {
         alignItems: "center",
       }}
     >
-      {welcome ? <Welcome handleWelcome={handleWelcome} /> : <Home />}
+      {" "}
+      <Router>
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/">
+            <Welcome />
+          </Route>
+        </Switch>
+      </Router>
     </Container>
   );
 }
